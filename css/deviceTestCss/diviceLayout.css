@@ -74,14 +74,7 @@ abbr,
 acronym {
   border: 0;
 }
-html,body{
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background: #f9f9f9;
-    font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;
-    }   
+
 .main-box{
     width: 70%;
     height: 100%;
@@ -283,16 +276,17 @@ tr td:nth-child(4){
 
 /* new version */
 #parent{
-		/*transform: translateY(30%);*/
-		position: absolute;
-    top: 50%;
+    background-color: #0abb08;
+    width:1050px;
+    height:670px;
+	position: absolute;
+    top: 80px;
     left: 50%;
-    margin: -290px 0 0 -440px;
+    margin-left:-525px;
 }
 #wrap{
-    width: 880px;
-    height: 580px;
-    margin: 0 auto;
+    width: 100%;
+    height: 100%;
     min-width: 880px;
 }
 .active{
@@ -301,33 +295,36 @@ tr td:nth-child(4){
 /* head */
 .envir-monitor-tit{
     text-align: center;
-    font-size: 18px;
-    background: #f27c19;
-    color: #fff;
+    font-size: 16px;
+    color: rgba(51,51,51,1);
     height: 50px;
     line-height: 50px;
+    margin-top: 13px;
+    font-family: "Microsoft YaHei";
 }
 /* aside */
 .envir-monitor-tab{
+    float:left;
     /* float: left; */
-    height: 100%;
-    background: #ebebeb;
+    height: 200px;
+    background: transparent;
     /* position: absolute; */
     display: table-cell;
     vertical-align: top;
     word-wrap: break-word;
     word-break: break-all;
-    height: 500px;
 }
 .envir-monitor-tab li{
-    width: 220px;
-    height: 66px;
-    line-height: 66px;
+    width: 176px;
+    height: 50px;
+    line-height: 50px;
     text-align: center;
     font-size: 14px;
+    font-family: "Microsoft YaHei";
     cursor: pointer;
     position: relative;
-        color: #363636;
+    color: #666;
+    background-color: #ffffff;
 }
 .envir-monitor-tab li i{
     position: relative;
@@ -360,10 +357,13 @@ tr td:nth-child(4){
     /* overflow: hidden; */
     /* position: relative; */
     /* left: 220px; */
-    width: 100%;
+    float: left;
+    width: 860px;
+    height: 600px;
     /* flex: 1; */
     background: #fff;
     display: table-cell;
+    margin-left: 10px;
 }
 .camera-monitor-cont,.mic-monitor-cont,.spaker-monitor-cont,.network-monitor-cont{
     display: none;
