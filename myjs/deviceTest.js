@@ -13,8 +13,8 @@
             $('#osVal').html(os);
             var browser = mediaTest.getBrowser();
             var browser_version = mediaTest.getBrowserVersion();
-            var error_tip = '<span><img src="./assets/testerr.png"></span><span>异常</span>'
-            var right_tip = '<span><img src="./assets/testok.png"></span><span>正常</span>'
+            var error_tip = '<span><img src="./assets/testAbout/testerr.png"></span><span>异常</span>'
+            var right_tip = '<span><img src="./assets/testAbout/testok.png"></span><span>正常</span>'
             $('#browserVal').html(browser + '.' + browser_version);
             if (browser == 'Chrome' && browser_version<=56){
                 $('#browStatus').html(error_tip);
@@ -193,8 +193,8 @@
             var resolution = this.resolution[resolution];
             window.getUserMedia = (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
             
-            var error_tip = '<span><img src="./assets/testerr.png"></span><span>异常</span>'
-            var right_tip = '<span><img src="./assets/testok.png"></span><span>正常</span>'
+            var error_tip = '<span><img src="./assets/testAbout/testerr.png"></span><span>异常</span>'
+            var right_tip = '<span><img src="./assets/testAbout/testok.png"></span><span>正常</span>'
             if(window.getUserMedia){
                 $("#webrtcVal").html('支持');
                 $("#webrtcStauts").html(right_tip);

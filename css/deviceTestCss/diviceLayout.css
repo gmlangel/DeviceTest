@@ -137,11 +137,12 @@ a{
     float: right;
 }
 select{
-    width: 185px;
+    width: 230px;
     color: rgb(128,128,128);
     border:1px solid rgb(128,128,128);
     height:26px;
     line-height:23px;
+    background-color: #ffffff;
 }
 label{
     color: rgb(128,128,128);
@@ -149,8 +150,8 @@ label{
 }
 video{
     background:#000;
-    width: 213px;
-    height:120px
+    width: 320px;
+    height:180px
 }
 .speaker{
     margin-top:70px;
@@ -188,16 +189,21 @@ th{
     clear:both;
 }
 #presenter-slider {
-    width: 280px;
-    height: 7px;
+    width: 224px;
+    height: 5px;
+    border: none;
+    border-radius: 2.5px;
+    margin-top: 7px;
 }
-#presenter-slider .ui-slider-range { background: #F17C1A; }
-#presenter-slider .ui-slider-handle { 
-    border-color: #F17C1A;
-    height: 17px;
-    border-radius: 12px;
-    width: 17px;
+#presenter-slider .ui-slider-range { background: #F74F20; }
+#presenter-slider .ui-slider-handle {
+    border-color: #F74F20;
+    background-color: #F74F20;
+    height: 10px;
+    border-radius: 5px;
+    width: 10px;
     outline:none;
+    margin-top: 2px;
 }
 .speakerTest{
     margin-left:78px;
@@ -207,12 +213,14 @@ th{
     height: 26px;
     margin-left: 10px;
     float: left;
+    border-radius: 4px;
+    margin-top: 2px;
 }
 .hui-back{
-    background: rgb(128,128,128);
+    background: rgb(220,220,220);
 }
 .green-back{
-    background: #F17C1A;
+    background: #f74f20;
 }
 .hui-color{
     color:rgb(128,128,128);
@@ -220,9 +228,8 @@ th{
 .green-color{
     color:#F17C1A;
 }
-.speakerTest i{
-    line-height:18px;
-    color: #f27c19;
+.speakerTest img{
+    margin-right: 10px;
 }
 .r-position{
     position: relative;
@@ -276,13 +283,35 @@ tr td:nth-child(4){
 
 /* new version */
 #parent{
-    background-color: #0abb08;
     width:1050px;
     height:670px;
 	position: absolute;
     top: 80px;
     left: 50%;
     margin-left:-525px;
+}
+.erweimaClass{
+    width: 120px;
+    height: 190px;
+    background-color: #ffffff;
+    border: 1px solid #f0f0f0;
+    border-radius: 5px;
+    position: fixed;
+    z-index: 1200;
+    top: 222px;
+    right: 20px;
+    display: table;
+}
+.erweimaClassSub{
+    display:table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 12px;
+    font-family: "Microsoft YaHei";
+    line-height: 18px;
+}
+.erweimaClassSubDes{
+    margin-top: 10px;
 }
 #wrap{
     width: 100%;
@@ -314,11 +343,11 @@ tr td:nth-child(4){
     word-wrap: break-word;
     word-break: break-all;
 }
-.envir-monitor-tab li{
+.envir-monitor-tab div{
     width: 176px;
     height: 50px;
     line-height: 50px;
-    text-align: center;
+    text-align: left;
     font-size: 14px;
     font-family: "Microsoft YaHei";
     cursor: pointer;
@@ -326,31 +355,17 @@ tr td:nth-child(4){
     color: #666;
     background-color: #ffffff;
 }
-.envir-monitor-tab li i{
-    position: relative;
-    top: 5px;
-    right: 5px;
+.envir-monitor-tab div img{
+    vertical-align: middle;
+    margin-left: 32px;
+    margin-right: 10px;
 }
-.envir-monitor-tab li:nth-child(4) i{
-    right: 13px;
-}
-.envir-monitor-tab li img{
-		width: 18px;
-    height: 18px;
-    position: absolute;
-    display: none;
-    right: 24px;
-    top: 23px;
-}
-.envir-monitor-tab li img.on{
+.envir-monitor-tab div img.on{
 		display: inherit;
 }
-.envir-monitor-tab li.active{
-    background: rgb(255, 255, 255);
-    color: #f27c19;
-}
-.envir-monitor-tab li.active i{
-    color: #f27c19;
+.envir-monitor-tab div.active{
+    background: #f74f20;
+    color: #ffffff;
 }
 /* main */
 .envir-monitor-cont{
@@ -372,51 +387,58 @@ tr td:nth-child(4){
     display: block;
 }
 .camera-monitor-cont .chiose ,.mic-monitor-cont .chiose ,.spaker-monitor-cont .chiose{
-    margin-left: 40px;
-    margin-top: 40px;
+    margin-left: 54px;
+    margin-top: 30px;
 }
 .camera-monitor-cont .chiose label ,.mic-monitor-cont .chiose label ,.spaker-monitor-cont .chiose label{
-    font-size: 15px;
-    font-weight: 600;
-    color: #363636;
+    font-size: 14px;
+    color: rgba(51,51,51,1);
 }
 .camera-monitor-cont .chiose select ,.mic-monitor-cont .chiose select ,.spaker-monitor-cont .chiose select{
-    width: 50%;
-    height: 37px;
+    width: 228px;
+    height: 36px;
     padding-left: 20px;
 }
 .camera-monitor-cont .warning ,.mic-monitor-cont .warning{
     margin-left: 135px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-size: 15px;
-    color: red;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-size: 12px;
+    color: #fe1c1c;
+}
+.camera-monitor-cont .warning img,.mic-monitor-cont .warning img{
+    margin-left: 8px;
+    vertical-align: middle;
+    margin-right: 5px;
+    margin-top: -2px;
 }
 .mic-monitor-cont .tip{
-    margin-left: 135px;
+    margin-left: 55px;
+    margin-top: 35px;
     font-size: 15px;
     font-weight: 600;
     margin-bottom: 20px;
-    color: #363636;
+    color: rgba(102,102,102,1);
 }
 .camera-monitor-cont .prompt ,.mic-monitor-cont .prompt ,.spaker-monitor-cont .prompt{
-    margin-left: 135px;
+    margin-left: 55px;
+    margin-top: 25px;
     font-size: 14px;
     color: #636363;
 }
 .camera-monitor-cont .prompt .tit ,.mic-monitor-cont .prompt .tit ,.spaker-monitor-cont .prompt .tit{
-        font-size: 15px;
-    font-weight: 600;
-    color: #363636;
+        font-size: 14px;
+    line-height: 26px;
+    color: rgba(102,102,102,1);
     margin-bottom: 10px;
 }
 .camera-monitor-cont .prompt p ,.mic-monitor-cont .prompt p ,.spaker-monitor-cont .prompt p{
-    line-height: 25px;
+    line-height: 26px;
 }
 .camera-monitor-cont .next input ,.mic-monitor-cont .next input ,.spaker-monitor-cont .next input{
-    width: 125px;
-    height: 33px;
-    background: #f27c19;
+    width: 140px;
+    height: 40px;
+    background: #f74f20;
     border: navajowhite;
     color: #fff;
     border-radius: 2px;
@@ -425,23 +447,32 @@ tr td:nth-child(4){
     margin-right: 30px;
     margin-bottom: 30px;
     position: absolute;
-    right: 10px;
-    bottom: 25px;
+    right: 20px;
+    bottom: 10px;
+    font-family: "Microsoft YaHei";
+    font-size: 16px;
+    border-radius: 5px;
+}
+.camera-monitor-cont .next input:hover,.mic-monitor-cont .next input:hover ,.spaker-monitor-cont .next input:hover{
+    background-color:rgba(220,69,36,1);
 }
 .network-monitor-cont table{
-    width: 100%;
-    padding-right: 40px;
-    margin-left: 20px; 
-    padding-top: 0;
+    width: 620px;
+    margin-left: 75px;
+    margin-top:10px;
     border-collapse: inherit;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    color: #666;
 }
 .network-monitor-cont table thead{
-    background: #F9F9F9;
+    background: rgba(253,246,243,1);
 }
 .network-monitor-cont table thead th{
     font-weight: inherit;
     font-size: 14px;
-    height: 40px;
+    height: 44px;
+    line-height: 44px;
     padding-left: 20px;
 }
 .network-monitor-cont table tbody tr td{
@@ -461,8 +492,8 @@ tr td:nth-child(4){
 .network-monitor-cont .ipaddress{
     text-align: right;
     margin-right: 20px;
-    height: 40px;
-    line-height: 40px;
+    height: 60px;
+    line-height: 60px;
 }
 .network-monitor-cont .btn{
     float: right;
@@ -470,23 +501,28 @@ tr td:nth-child(4){
     margin-top: 20px;
 }
 .network-monitor-cont .btn input{
-    width: 125px;
-    height: 33px;
-    background: #f27c19;
+    width: 140px;
+    height: 40px;
+    background: #f74f20;
     border: navajowhite;
     color: #fff;
-    border-radius: 2px;
+    border-radius: 5px;
     outline: none;
     cursor: pointer;
     margin-right: 30px;
     margin-bottom: 30px;
     position: absolute;
-    right: 10px;
-    bottom: 25px;
+    right: 20px;
+    bottom: 10px;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+}
+.network-monitor-cont .btn input:hover{
+    background-color:rgba(220,69,36,1);
 }
 .spaker-monitor-cont .spakerSlider{
-    margin-left: 135px;
-    margin-bottom: 20px;
+    margin-left: 55px;
+    margin-bottom: 107px;
     margin-top: 30px;
     display: flex;
 }
@@ -497,35 +533,43 @@ tr td:nth-child(4){
     color: #f27c19;
     font-size: 25px;
 }
+
+.spaker-monitor-cont .spakerSlider img{
+    vertical-align: middle;
+    margin-right: 20px;
+}
 .spaker-monitor-cont .play{
-    margin-left: 135px;
+    margin-left: 55px;
     display: flex;
-    margin-top: 30px;
+    margin-top: 35px;
     margin-bottom: 20px;
 }
 .spaker-monitor-cont .play input{
-    width: 23%;
-    height: 38px;
-    background: #f27c19;
+    width: 70px;
+    height: 30px;
+    background: #f74f20;
     border: navajowhite;
     color: #fff;
-    border-radius: 4px;
+    border-radius: 5px;
 }
+.spaker-monitor-cont .play input:hover{
+    background-color:rgba(220,69,36,1);
+}
+
 .spaker-monitor-cont .play div{
-    line-height: 38px;
+    line-height: 28px;
     margin-left: 20px;
-    font-size: 15px;
-    font-weight: 600;
-    color: #363636;
+    font-size: 14px;
+    color: #666;
 }
 .speakerTest {
-    margin-left: 135px;
-    margin-bottom: 20px;
+    margin-left: 55px;
+    margin-bottom: 100px;
     overflow: hidden;
 }
 .camera-monitor-cont .camera{
-    margin-left: 135px;
-    margin-top: 20px;
+    margin-left: 55px;
+    margin-top: 15px;
     margin-bottom: 20px;
 }
 #suspend{
