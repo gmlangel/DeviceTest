@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <link rel="stylesheet" type="text/css" href="./css/lessonList.css">
+</head>
+<body>
+<div id="lessonlistContainer">
+    <div id="lessonlist_tabTool">
+        <div class="divBtn" id="firstitem">直播课</div>
+        <div class="divBtn" id="seconditem">自主学习课</div>
+    </div>
+    <div id="lessonList_subContainer">
+
+    </div>
+</div>
+<script type="text/javascript">
+    var lessonCon = document.getElementById("lessonList_subContainer");
+    var currentLessonMode = "";//当前正在显示的课程类型
+    lessonCon.style.height = (document.body.clientHeight - 180) + "px";
+    window.addEventListener("resize",function(evt){
+        lessonCon.style.height = (document.body.clientHeight - 180) + "px";
+    })
+    //切换tabTool的相关脚本------------begin
+    document.getElementById("firstitem").addEventListener("click",function(evt){
+        switchLesson("zhibo")
+    });
+    document.getElementById("seconditem").addEventListener("click",function(evt){
+        switchLesson("zizhu")
+    });
+    function switchLesson(mode){
+        var wangLoadUrl = ""
+        currentLessonMode = mode
+        if(mode == "zhibo")
+        {
+            wangLoadUrl = "./assets/zhiboke.json";
+            document.getElementById("firstitem").style.color = "#ffffff";
+            document.getElementById("firstitem").style.backgroundColor = "rgba(247,79,32,1)";
+            document.getElementById("seconditem").style.color = "rgba(102,102,102,1)";
+            document.getElementById("seconditem").style.backgroundColor = "rgba(233,234,235,1)";
+        }else{
+            wangLoadUrl = "./assets/zixike.json";
+            document.getElementById("seconditem").style.color = "#ffffff";
+            document.getElementById("seconditem").style.backgroundColor = "rgba(247,79,32,1)";
+            document.getElementById("firstitem").style.color = "rgba(102,102,102,1)";
+            document.getElementById("firstitem").style.backgroundColor = "rgba(233,234,235,1)";
+        }
+        //异步加载登录页
+        $.ajax({
+            url:wangLoadUrl,
+            dataType:"json",
+            success:function(data){
+                if(data && data.code == "1"){
+                    var dataArr = data.res;
+                    $("#lessonList_subContainer").html(makeLessonListByData(dataArr));
+                }
+            },
+            timeOut:10
+        });
+    }
+    switchLesson("zhibo");//默认选中直播模式
+
+    /*进入教室*/
+    function goInToClassRoom(arg){
+        alert("进入课程:" + arg)
+    }
+    function reGoInToClassRoom(arg){
+        alert("再次挑战课程:" + arg)
+    }
+    function classNotStart(arg){
+        alert("课程尚未开始:" +arg)
+    }
+    /**
+     * 根据数据源生成HTML文本
+     * */
+    function makeLessonListByData(arr){
+        var dataArr = arr || [];
+        var j = dataArr.length;
+        var item = null;
+        var tempRootNode = document.createElement("div");
+        for(var i=0;i<j;i++){
+            item = dataArr[i];
+            var tempStr = ""
+            if("zhibo" == currentLessonMode){
+                //直播课
+                if(item.isCompleted == true){
+                    tempStr += "<div class='lessonItemConDisAble'>"
+                    tempStr += "<div class='lessonItemTitleDisAble'>"+item.name + "</div>";
+                    tempStr += "<div class='jiaobiao1'><img src='./assets/selectLesson/jiaobiao.png'></div>"
+                    tempStr += "<div class='lessonDes1'>课程类别:&nbsp;&nbsp;"+item.type + "<br>课程时长:&nbsp;&nbsp;" +item.lessonTimeLen + "<br>上课时间:&nbsp;&nbsp;" + item.startTime +"</div>";
+                }else{
+                    tempStr += "<div class='lessonItemConEnable1'>"
+                    tempStr += "<div class='lessonItemTitleEable'>"+item.name + "</div>";
+                    tempStr += "<div class='lessonDes2'>课程类别:&nbsp;&nbsp;"+item.type + "<br>课程时长:&nbsp;&nbsp;" +item.lessonTimeLen + "<br>上课时间:&nbsp;&nbsp;" + item.startTime +"</div>";
+                }
+                if(item.isCompleted == false && item.isStart == true){
+                    //按钮开启模式
+                    tempStr += "<div class='joinRoomEnable' id='cla_"+item.id+"' onclick='javascript:void(0);goInToClassRoom("+item.id+");'>进入教室</div>"
+                }else if(item.isCompleted == false && item.isStart == false){
+                    //提示模式
+                    tempStr += "<div class='joinRoomEnable' id='cla_"+item.id+"' onclick='javascript:void(0);classNotStart("+item.id+");'>进入教室</div>"
+                }else{
+                    //按钮禁用模式
+                    tempStr += "<div class='joinRoomDisable'>进入教室</div>"
+                }
+                tempStr += "</div>"
+            }else{
+               //自学课
+                //直播课
+                if(item.isCompleted == true){
+                    tempStr += "<div class='lessonItemConEnable12'>"
+                    tempStr += "<div class='lessonItemTitleEable'>"+item.name + "</div>";
+                    tempStr += "<div class='jiaobiao1'><img src='./assets/selectLesson/jiaobiao.png'></div>"
+                    tempStr += "<div class='lessonDes2'>课程类别:&nbsp;&nbsp;"+item.type + "<br>建议课时:&nbsp;&nbsp;" +item.lessonTimeLen +"</div>";
+                }else{
+                    tempStr += "<div class='lessonItemConEnable12'>"
+                    tempStr += "<div class='lessonItemTitleEable'>"+item.name + "</div>";
+                    tempStr += "<div class='lessonDes2'>课程类别:&nbsp;&nbsp;"+item.type + "<br>建议课时:&nbsp;&nbsp;" +item.lessonTimeLen +"</div>";
+                }
+                if(item.isCompleted == false){
+                    //可上课模式
+                    tempStr += "<div class='joinRoomEnable2' id='cla_"+item.id+"' onclick='javascript:void(0);goInToClassRoom("+item.id+");'>进入教室</div>"
+                }else{
+                    //复习模式
+                    tempStr += "<div class='joinRoomEnable2' id='cla_"+item.id+"' onclick='javascript:void(0);reGoInToClassRoom("+item.id+");'>再次挑战</div>"
+                }
+                tempStr += "</div>"
+            }
+            var subNode = document.createElement("div");
+            subNode.innerText = tempStr;
+            tempRootNode.appendChild(subNode);
+        }
+        return "<div class='lessonListRoot'>" +tempRootNode.innerText;+ "</div>"
+    }
+    //切换tabTool的相关脚本------------end
+</script>
+</body>
+</html>

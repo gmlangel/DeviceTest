@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>斑码编程</title>
+    <link rel="stylesheet" type="text/css" href="./css/index.css"><link>
+    <script type="text/javascript" src="./myjs/jquery/jquery.min.js"></script>
+    <script type="text/javascript">
+        //页面类型
+        var displayMode = {
+            login:"loginMode"/*登录页*/,
+            code2:"code2Mode"/*二维码显示页*/,
+            downloadBrowser:"downloadBrowserMode"/*下载chrome浏览器*/,
+            lessonList:"lessonListMode"/*课程列表页*/
+        };
+        window.displayMode = displayMode;
+
+        //用于取url参数
+        function getUrlParam(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+            var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+            if (r != null) return unescape(r[2]); return null; //返回参数值
+        }
+
+        //加载完毕后的处理
+        window.onload = function(){
+            var pageTag = getUrlParam("pageTag");
+            if(pageTag == null){
+                changeDisplayMode(displayMode.login);//默认显示登录页
+            }else{
+                changeDisplayMode(pageTag);
+            }
+
+        }
+
+        /**
+         * 改变显示类型
+         * */
+        function changeDisplayMode(mode){
+            var wantGoUrl = ""
+            switch(mode){
+                case displayMode.login:
+                    $("#btnGroups1").show();
+                    $("#btnGroups2").hide();
+                    wantGoUrl = "./login.html";
+                    break;
+                case displayMode.code2:
+                    $("#btnGroups1").hide();
+                    $("#btnGroups2").hide();
+                    wantGoUrl = "./code2.html";
+                    break;
+                case displayMode.downloadBrowser:
+                    $("#btnGroups1").hide();
+                    $("#btnGroups2").hide();
+                    wantGoUrl = "./downloadBrowser.html";
+                    break;
+                case displayMode.lessonList:
+                    $("#btnGroups1").hide();
+                    $("#btnGroups2").show();
+                    wantGoUrl = "./lessonList.html";
+                    break;
+            }
+            if("" != wantGoUrl){
+                //异步加载登录页
+                $.ajax({
+                    url:wantGoUrl,
+                    dataType:"html",
+                    success:function(data){
+                        if(data){
+                            $("#mainContent").html(data);
+                        }
+                    },
+                    timeOut:10
+                });
+            }
+        }
+
+        /**
+         * 显示设置面板
+         * */
+        function showSettingPanel(b){
+            if(b){
+                $("#mainMask").show();
+            }else{
+                $("#mainMask").hide();
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <div id="mainMask">
+        <div id="panel_Setting">
+            <div id="panel_SettingTitle">账号设置</div>
+            <div id="panel_SettingContent">
+                <div id="panel_SettingContent_firstContent" class="panelItemContainer">
+                    <div class="panelItemLabel">孩子姓名</div><div class="panelItemInput"><input type="text" id="tb_name" maxlength="11" placeholder="小斑马"></div>
+                </div>
+                <div  class="panelItemContainer">
+                    <div class="panelItemLabel">孩子年龄</div><div class="panelItemInput"><input type="text" id="tb_age" maxlength="8" placeholder="7岁"></div>
+                </div>
+                <div  class="panelItemContainer">
+                    <div class="panelItemLabel">孩子性别</div><div class="panelItemInput">
+                    <select>
+                        <option value ="1" selected>男</option>
+                        <option value ="0">女</option>
+                    </select>
+                </div>
+                </div>
+                <div  class="panelItemContainer">
+                    <div class="panelItemLabel">孩子号码</div><div class="panelItemInput"><input type="text" id="tb_phone" placeholder="130xxxxxxxx" maxlength="11" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"></div>
+                </div>
+                <div id="btn_saveUserInfo" class="divBtn">保存</div>
+            </div>
+        </div>
+    </div>
+    <div id="header" class="headerClass">
+        <div id="iconLogo"></div>
+        <div id="btnGroups1">
+            <div>课程介绍</div>
+            <div>购买课程</div>
+            <div>关于我们</div>
+        </div>
+        <div id="btnGroups2">
+            <div id="btnGroups2_subcontainer1"><img class="img1" src="./assets/selectLesson/user_header.png"><gmlfont>gmltest</gmlfont></div>
+            <div id="btnGroups2_subcontainer2"><img class="img2" src="./assets/selectLesson/setting.png"><gmlfont2 id="btn_setting" class="divBtn">设置</gmlfont2></div>
+        </div>
+    </div>
+    <div id="mainContent" class="contentClass">
+    </div>
+    <div id="footer" class="footerClass"></div>
+    <script type="text/javascript">
+        $("#btn_setting").click(function(evt){
+            showSettingPanel(true)//显示设置面板
+        });
+
+        $("#btn_saveUserInfo").click(function(evt){
+            showSettingPanel(false)//显示设置面板
+        });
+    </script>
+</body>
+</html>

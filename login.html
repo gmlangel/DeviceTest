@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <link rel="stylesheet" type="text/css" href="./css/login.css">
+    <script type="text/javascript" src="./myjs/jquery/jquery.min.js"></script>
+</head>
+<body>
+    <div id="loginContainer" class="loginContainerClass">
+        <div id="loginPanel">
+            <div id="subLoginPanel">
+                <div id="subLoginPanel_title">欢迎登录斑码编程在线教室</div>
+                <div id="subLoginPanel_tabTool">
+                    <div class="divBtn">用二维码扫描登录</div>
+                    <div class="divBtn">用手机短信验证码登录</div>
+                </div>
+                <div id="subLoginPanel_2code" class="subLoginPanel_contentClass" style="display: none">
+                    <img src="./assets/login/id2Code.png">
+                    <div>手机打开微信 扫描二维码登录</div>
+                </div>
+                <div id="subLoginPanel_mobilePhone" class="subLoginPanel_contentClass" style="display: block">
+                    <form id="mobilePhoneLoginForm">
+                        <div id="bg_mobile"><input type="text" placeholder="手机号" id="tb_mobile" maxlength="11" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"></div>
+                        <div id="bg_regule"><input type="text" placeholder="验证码" id="tb_regule" maxlength="8" onkeyup="value=value.replace(/[\W]/g,'') " onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"></div>
+                        <div id="bg_getRegule" class="divBtn">获取验证码</div>
+                        <div id="btn_joinClassRoom" class="divBtn">进入教室</div>
+                        <div id="btn_forgetPWD" class="divBtn">忘记密码?</div>
+                    </form>
+                </div>
+            </div>
+            <div id="gongsibeian">北京启迪开智教育科技有限公司 京ICP备 17051215号-1</div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $("#btn_joinClassRoom").click(function(){
+            window.location.href = "./index.html?pageTag=code2Mode";
+        });
+    </script>
+</body>
+</html>

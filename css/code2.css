@@ -1,0 +1,19 @@
+#code2Container{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 18px;
+    font-family: "Microsoft YaHei";
+    color: rgba(51,51,51,1);
+    display: table;
+}
+
+#code2SubContainer{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#code2Container #code2Des{
+    margin-top: 20px;
+    line-height: 30px;
+}

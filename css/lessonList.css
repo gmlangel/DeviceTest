@@ -1,0 +1,195 @@
+#lessonlistContainer{
+    position: absolute;
+    z-index: 500;
+    width: 1015px;
+    height: 100%;
+    margin-left:-507px;
+    left: 50%;
+}
+
+#lessonlist_tabTool{
+    margin-top: 100px;
+    width: 100%;
+    line-height: 50px;
+}
+#lessonlist_tabTool div{
+    text-align: center;
+    width: 150px;
+    height: 100%;
+    float: left;
+    color: rgba(102,102,102,1);
+    font-size: 20px;
+    font-family: "Microsoft YaHei";
+    background-color: rgba(233,234,235,1);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    margin-left: 10px;
+}
+
+#lessonlist_tabTool div:hover{
+    color: #ffffff;
+    background-color: rgba(247,79,32,1);
+}
+#lessonlist_tabTool #firstitem{
+    margin-left: 0px;
+}
+
+#lessonList_subContainer{
+    width: 100%;
+    height: 620px;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: #ffffff;
+}
+
+.lessonItemConDisAble{
+    width: 318px;
+    height: 244px;
+    float: left;
+    margin-left:5px;
+    margin-top:13px;
+    background: url("../assets/selectLesson/zhihui.png") no-repeat center center;
+}
+
+.lessonItemConEnable1{
+    width: 318px;
+    height: 244px;
+    float: left;
+    margin-left:5px;
+    margin-top:13px;
+    background: url("../assets/selectLesson/zhiboBG.png") no-repeat center center;
+}
+
+
+.lessonItemTitleDisAble{
+    width: 100%;
+    height: 90px;
+    line-height: 90px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+    font-family: "Hiragino Sans GB";
+}
+
+.lessonItemTitleEable{
+    width: 100%;
+    height: 90px;
+    line-height: 90px;
+    text-align: center;
+    font-size: 16px;
+    color: #ffffff;
+    font-family: "Hiragino Sans GB";
+}
+
+.jiaobiao1{
+    float: right;
+    margin-top: -75px;
+    margin-right: 17px;
+}
+
+.lessonDes1{
+    width: 100%;
+    height: 90px;
+    line-height: 26px;
+    text-align: left;
+    font-size: 14px;
+    color: rgba(51,51,51,1);
+    font-family: "Hiragino Sans GB";
+    margin-left: 70px;
+}
+
+.lessonDes2{
+    width: 100%;
+    height: 90px;
+    line-height: 26px;
+    text-align: left;
+    font-size: 14px;
+    color: #ffffff;
+    font-family: "Hiragino Sans GB";
+    margin-left: 70px;
+}
+
+.joinRoomDisable{
+    text-align: center;
+    font-size: 14px;
+    color: rgba(51,51,51,1);
+    font-family: "Hiragino Sans GB";
+    width: 108px;
+    height: 34px;
+    line-height: 34px;
+    background-color: rgba(222,223,224,1);
+    border-radius: 17px;
+    margin-left: 105px;
+    margin-top: -3px;
+    -moz-user-select: none; /*火狐*/
+    -webkit-user-select: none; /*webkit浏览器*/
+    -ms-user-select: none; /*IE10*/
+    -khtml-user-select: none; /*早期浏览器*/
+    user-select: none;
+    cursor: pointer;
+}
+
+.joinRoomEnable{
+    text-align: center;
+    font-size: 14px;
+    color: #ffffff;
+    font-family: "Hiragino Sans GB";
+    width: 108px;
+    height: 34px;
+    line-height: 34px;
+    border: 1px solid #ffffff;
+    border-radius: 17px;
+    margin-left: 105px;
+    margin-top: -3px;
+    -moz-user-select: none; /*火狐*/
+    -webkit-user-select: none; /*webkit浏览器*/
+    -ms-user-select: none; /*IE10*/
+    -khtml-user-select: none; /*早期浏览器*/
+    user-select: none;
+    cursor: pointer;
+}
+.joinRoomEnable:hover{
+    border: 1px solid rgba(250,180,81,1);
+    color: rgba(250,180,81,1);
+    background-color: #ffffff;
+}
+
+.lessonListRoot{
+    margin-left: 20px;
+    margin-top:15px;
+}
+
+.lessonItemConEnable12{
+    width: 318px;
+    height: 244px;
+    float: left;
+    margin-left:5px;
+    margin-top:13px;
+    background: url("../assets/selectLesson/zizhuBG.png") no-repeat center center;
+}
+
+.joinRoomEnable2{
+    text-align: center;
+    font-size: 14px;
+    color: #ffffff;
+    font-family: "Hiragino Sans GB";
+    width: 108px;
+    height: 34px;
+    line-height: 34px;
+    border: 1px solid #ffffff;
+    border-radius: 17px;
+    margin-left: 105px;
+    margin-top: -3px;
+    -moz-user-select: none; /*火狐*/
+    -webkit-user-select: none; /*webkit浏览器*/
+    -ms-user-select: none; /*IE10*/
+    -khtml-user-select: none; /*早期浏览器*/
+    user-select: none;
+    cursor: pointer;
+}
+.joinRoomEnable2:hover{
+    border: 1px solid rgba(112,180,253,1);
+    color: rgba(112,180,253,1);
+    background-color: #ffffff;
+}

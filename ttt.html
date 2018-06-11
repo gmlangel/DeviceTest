@@ -1,0 +1,378 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>用户环境测试</title>
+	<link rel="dns-prefetch" href="//cdn.czbapp.com">
+	<link rel="stylesheet" href="https://cdn.czbapp.com/czb/webssr/stylesheets/commonChunk.30650ca7dd7e403ccdfb2ec4aa7d7ee6.css">
+	<link rel="stylesheet" href="https://cdn.czbapp.com/czb/webssr/stylesheets/css/font-awesome.min.css">
+	<link rel="shortcut icon" href="//cdn.czbapp.com/static/favicon.ico">
+	<link rel="stylesheet" href="https://cdn.czbapp.com/czb/webssr/stylesheets/debug.02a9186c07f0970a9f9fcfb33a3fca50.css">
+	<style></style>
+	<style id="style-1-cropbar-clipper">
+	.en-markup-crop-options {
+		top: 18px !important;
+		left: 50% !important;
+		margin-left: -100px !important;
+		width: 200px !important;
+		border: 2px rgba(255,255,255,.38) solid !important;
+		border-radius: 4px !important;
+	}
+
+	.en-markup-crop-options div div:first-of-type {
+		margin-left: 0px !important;
+	}
+	</style>
+    <link rel="stylesheet" href="/static/js/jquery/jquery-ui.min.css">
+    <link rel="stylesheet" href="/static/css/syschecks.css">
+    <link rel="stylesheet" href="/static/css/iconfont.css">
+    <link rel="stylesheet" href="/static/css/font.css">
+    <link rel="stylesheet" type="text/css" href="/static/umeditor/css/umeditor/umeditor.css">
+    <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+</head>
+<body>
+    <input type="text" value="None" style="display:none" id="userid">
+	<div id="parent">
+	    <div id="wrap" style="display: block;">
+	        <div class="envir-monitor-tit">设备检测</div>
+	        <div>
+	                <ul class="envir-monitor-tab">
+	                        <li class="active"><i class="material-icons"></i>摄像头检测 <img src="../static/js/syscheck/accross.png"></li>
+	                        <li><i class="material-icons"></i>麦克风检测 <img src="../static/js/syscheck/accross.png"></li>
+	                        <li><i class="material-icons"></i>扬声器检测 <img src="../static/js/syscheck/accross.png"></li>
+	                        <li><i class="material-icons"></i>网络检测 <img src="../static/js/syscheck/accross.png"></li>
+	                </ul>
+	                <ul class="envir-monitor-cont">
+	                    <li class="camera-monitor-cont active">
+	                        <div class="chiose">
+	                            <label for="">选择摄像头：</label>
+	                            <select class="videoSelect">
+	                                <option value="" class="hide noDevice">没有监测到摄像头</option>
+	                            <option value="9efa83e41eb1691b3e50b5b61628248d9ac3c8b40f4ce3055a427c98a08fc184" selected="">Integrated Camera (0bda:5719)</option><option value="70dfcfdb1d41910b9ea4fdfa9711446516ca3ad2b7ff6b28816f40fd4c2259e5">Corel Camera Plug-in</option><option value="887d98ade698b2d1cdaa38ad9d5932f91908f19381729e0e0b0d1846129ff7d0">CorelScreenCapture</option></select>
+	                        </div>
+	                        <div class="warning">注意：选择禁用会导致摄像头不可用</div>
+	                        <div class="camera">
+	                            <video id="mediaVideo" width="160" height="120" autoplay="" src="blob:https://class.csslcloud.net/d4e808b0-85c1-4c13-93e4-d2b6023ca05e"></video>
+	                        </div>
+	                        <div class="prompt">
+	                        	<div class="tit">温馨提示:如果您无法看到摄像头，请按以下方式排查问题</div>
+	                            <p>
+	                                1.若杀毒软件弹出提示信息，请选择“允许”；<br>
+	                                2.确认摄像头已连接并开启；<br>
+	                                3.如果摄像头仍然没有页面，换一个插口重新插入摄像头；<br>
+	                                4.请选择正确摄像头选项，选择禁用会导致摄像头不可用；<br>
+	                                5.确认摄像头没有被其他程序占用；<br>
+	                                6.尝试重启电脑。
+	                            </p>
+	                        </div>
+	                        <div class="next">
+	                            <input type="button" value="下一步" class="testNext" index="1">
+	                        </div>
+	                    </li>
+	    
+	                    <li class="mic-monitor-cont">
+	                        <div class="chiose">
+	                            <label for="">选择麦克风：</label>
+	                            <select class="audioSelect">
+	                                <option class="hide noDevice">没有检测到麦克风</option>
+	                            <option value="default" selected="">默认 - 麦克风 (Conexant 20671 SmartAudio HD)</option><option value="communications">通讯 - 麦克风 (Conexant 20671 SmartAudio HD)</option><option value="b4eccd97e0847f3753aeaabcd36072ff9e634f2de7d24dfae31df30afa965eea">麦克风 (Conexant 20671 SmartAudio HD)</option></select>
+	                        </div>
+	                        <div class="warning">注意：选择禁用会导致麦克风不可用</div>
+	                        <div class="tip">对着麦克风说话，你能看见麦克风音量条跳动吗？</div>
+	                        <div class="speakerTest">
+	                            <div class="left">
+	                                    <i class="material-icons green-color" style="position: relative;top: 5px;"></i>
+	                                </div>
+	                                <div class="speakerBlock hui-back" style="margin-left:3px"></div>
+	                                <div class="speakerBlock hui-back"></div>
+	                                <div class="speakerBlock hui-back"></div>
+	                                <div class="speakerBlock hui-back"></div>
+	                                <div class="speakerBlock hui-back"></div>
+	                                <div class="speakerBlock hui-back"></div>
+	                                <div class="speakerBlock hui-back"></div>
+	                                <div class="speakerBlock hui-back"></div>
+	                                <div class="speakerBlock hui-back"></div>
+	                                <div class="speakerBlock hui-back"></div>
+	                                <div class="speakerBlock hui-back"></div>
+	                                <div class="speakerBlock hui-back"></div>
+	                                <div class="speakerBlock hui-back"></div>
+	                                <div class="speakerBlock hui-back"></div>
+	                        </div>
+	                        <div class="prompt">
+	                        	<div class="tit">温馨提示:如果您无法看到音量条跳动，请按以下方式排查</div>
+	                            <p>
+	                                1.若杀毒软件弹出提示信息，请选择“允许”；<br>
+	                                2.确认麦克风已连接并开启；<br>
+	                                3.确认麦克风已插入电脑的麦克风插孔中，并且麦克风声音已调整到最大；<br>
+	                                4.请选择正确的麦克风选项，选择禁用会导致麦克风不可用；<br>
+	                                5.如果麦克风仍然没有声音，换一个插孔重新插入麦克风；<br>
+	                                6.尝试重启电脑。
+	                            </p>
+	                        </div>
+	                        <div class="next">
+	                            <input type="button" value="下一步" class="testNext" index="2">
+	                        </div>
+	                    </li>
+	
+	                    <li class="spaker-monitor-cont">
+	                        <div class="chiose">
+	                            <label for="">选择扬声器：</label>
+	                            <select class="soundTest">
+	                                    <option class="hide noDevice">没有检测到扬声器</option>
+	                            <option value="default" selected="">默认 - 扬声器 (Conexant 20671 SmartAudio HD)</option><option value="communications">通讯 - 扬声器 (Conexant 20671 SmartAudio HD)</option><option value="eee2ff6404f7bfd01ecd8e2d52296fb0e182cb137d6b14842c65d099c078c5b8">扬声器 (Conexant 20671 SmartAudio HD)</option></select>
+	                        </div>
+	                        <div class="play">
+	                            <input type="button" value="播放" id="soundTest"><input type="button" value="停止播放" class="hide" id="soundTestStop"><div>点击“播放”，您能听到音乐吗？</div>
+	                        </div>
+	                        <div class="spakerSlider">
+	                            <i class="material-icons"></i><div id="presenter-slider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min"></div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 20%;"></span><div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min" style="width: 20%;"></div></div>
+	                        </div>
+	                        <div class="prompt">
+	                        	<div class="tit">温馨提示:如果您无法听见声音，请按以下方式排查</div>
+	                            <p>
+	                                1.若杀毒软件弹出提示信息，请选择“允许”；<br>
+	                                2.确认手机、扬声器已连接并开启；<br>
+	                                3.如果耳机、扬声器音量已经调整到最大；<br>
+	                                4.请选择正确的耳机选项，选择禁用会导致耳机、扬声器不可用；<br>
+	                                5.如果耳机、扬声器仍然没有声音，换一个插口重新插入耳机、扬声器；<br>
+	                                6.尝试重启电脑。
+	                            </p>
+	                        </div>
+	                        <div class="next">
+	                            <input type="button" value="下一步" class="testNext" index="3">
+	                        </div>
+	                    </li>
+	    
+	                    <li class="network-monitor-cont">
+	                        <div class="ipaddress">IP地址：112.21.32.123</div>
+	                        <table>
+	                            <thead>
+	                                <tr><th>检测项</th>
+	                                <th>检测结果</th>
+	                                <th>状态</th>
+	                            </tr></thead>
+	                            <tbody>
+	                                <tr>
+	                                    <td>操作系统</td>
+	                                    <td id="osVal">Window8</td>
+	                                    <td><img src="/static/js/syscheck/accross.png">正常</td>
+	                                </tr>
+	                                <tr>
+	                                    <td>浏览器内核</td>
+	                                    <td id="browserVal">Chrome.66</td>
+	                                    <td id="browStatus"><span><img src="/static/js/syscheck/saccross.png"></span><span>正常</span></td>
+	                                </tr>
+	                                <tr>
+	                                    <td>屏幕分辨率</td>
+	                                    <td id="screenVal">1366*768</td>
+	                                    <td><img src="/static/js/syscheck/accross.png">正常</td>
+	                                </tr>
+	                                <tr>
+	                                    <td>浏览器cookie</td>
+	                                    <td id="cookieVal">启用</td>
+	                                    <td id="cookieStatus"><span><img src="/static/js/syscheck/saccross.png"></span><span>正常</span></td>
+	                                </tr>
+	                                <tr>
+	                                    <td>浏览器JavaScript</td>
+	                                    <td>支持</td>
+	                                    <td><img src="/static/js/syscheck/accross.png">正常</td>
+	                                </tr>
+	                                <tr>
+	                                    <td>web rtc</td>
+	                                    <td id="webrtcVal">支持</td>
+	                                    <td id="webrtcStauts"><span><img src="/static/js/syscheck/saccross.png"></span><span>正常</span></td>
+	                                </tr>
+	                                <tr>
+	                                    <td>服务检测</td>
+	                                    <td id="serverVal">/doc/img/ic1/ic2</td>
+	                                    <td id="serverStauts"><span><img src="/static/js/syscheck/saccross.png"></span><span>正常</span></td>
+	                                </tr>
+	                                <tr>
+	                                    <td>端口检测</td>
+	                                    <td id="portVal">/80/1935/14000/ic2</td>
+	                                    <td id="portStauts"><span><img src="/static/js/syscheck/saccross.png"></span><span>正常</span></td>
+	                                </tr>
+	                            </tbody>
+	                        </table>
+	                        <div class="btn">
+	                            <input type="button" value="重新检测" class="testNext testNextreg" index="4">
+	    						<input type="button" value="进入课堂" class="testNext testNextin" style="display: none;" index="5">
+	                        </div>
+	                    </li>
+	                </ul>
+	        
+	            </div>
+	    </div>
+	    <div id="suspend" style="display: none;">
+	    	<div class="suspendBox">
+	    		<img src="/static/img/login_logo1.png" alt="">
+	    		<div>欢迎使用互动课堂</div>
+	    		<div class="">为了保证您的上课体验，请先进行设备检测</div>
+	    		<input type="button" value="开始检测" class="beginTest">
+                <p class="net-point"><span>推流节点：</span><span class="place-net">北京</span></p>
+	    		
+	    	</div>
+	    </div>
+	</div>
+<script src="/static/woogeen/socket.io.js"></script>
+<script src="/static/js/jquery/jquery.min.js"></script>
+<script src="/static/js/jquery/jquery-ui.min.js"></script>
+<script src="/static/js/jquery/jquery.cookie.js"></script>
+<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>  
+<!-- browser -->
+<script src="/static/js/syscheck/check.js"></script>
+<!-- os -->
+<script src="/static/js/syscheck/systemversion.js"></script>
+<script src="/static/js/syscheck/syscheck.js"></script>
+<script>
+    var local_arr = [
+            ['上海', 'ShangHai', 'HD'],
+            ['北京', 'BeiJing', 'HB'],
+            ['深圳', 'ShenZhen', 'HN'],
+            ['欧洲东部', 'Europe East', 'OZD'],
+            ['欧洲西部', 'European West', 'OZX'],
+            ['北美东部', 'America East', 'MD'],
+            ['北美西部', 'American West', 'MX'],
+            ['东南亚', 'Southeast Asia', 'DNY']
+        ];
+    var area_code = window.localStorage.getItem('area_code');
+    if(area_code){
+        for(var i = 0; i < local_arr.length; i++){
+            if(local_arr[i][2] === area_code){
+                $('#suspend .place-net').html(local_arr[i][0]);
+            }
+        }
+    }else{
+        var userid = $('#userid').val();
+        $.get('https://ccapi.csslcloud.net/api/dispatch', {userid: userid}, function(data){
+            console.log(data);
+            if(data.result === 'OK'){
+                $('#suspend .place-net').html(data.loc);
+                window.localStorage.setItem('area_code', data.area_code);
+            }
+        });
+    }
+
+    $(document).on('click', '#suspend .place-net', function(){
+        var str = '<div id="choice-net" >'+
+                    '<div class="inner">'+
+                        '<h3>节点切换<i class="fa icon-guanbipsd"></i></h3>'+
+                        '<div class="content">'+
+                            '<p class="title"><span>节点</span><span>操作</span></p>'+
+                            '<div class="point"></div>'+
+                        '</div>'+
+                    '</div>'+
+                    '<div class="mask"></div>'+
+                    '</div>';
+            $('body').append(str);
+            for(var i = 0; i < local_arr.length; i++){
+                var name, area_code, done;
+                name = '<span class="road">'+ local_arr[i][0]  +'</span>';
+
+                var current_area_code = window.localStorage.getItem('area_code');
+                area_code = local_arr[i][2];
+                if(current_area_code === area_code){
+                    done = '<span class="done">当前线路</span>';
+                }else{
+                    done = '<span class="done"><em>切换</em></span>';
+                }
+
+                var str ='<p data-value="' + area_code +'">'+ name + done + '</p>';
+                $('#choice-net .content .point').append(str);
+            }
+    });
+
+    $(document).on('click', '#choice-net .fa', function(){
+        $('#choice-net').remove();
+    });
+    $(document).on('click', '#choice-net .done em', function(){
+        var area_code = $(this).parent().parent().data('value');
+        window.localStorage.setItem('area_code', area_code);
+        for(var i = 0; i < local_arr.length; i++){
+            if(local_arr[i][2] === area_code){
+                $('#suspend .place-net').html(local_arr[i][0]);
+            }
+        }
+        $('#choice-net').remove();
+    });
+
+
+
+
+
+    $('.envir-monitor-tab li').click(function(){
+        var i = $(this).index();
+        $(this).addClass('active').siblings().removeClass('active');
+        $('.envir-monitor-cont li').eq(i).addClass('active').siblings().removeClass('active');
+    })
+	var is_begin = localStorage.getItem('is_begin');
+	//多次进入
+	if(is_begin ==='true'){
+    	$('#wrap').show();
+    	$('#suspend').hide();
+    	$('.testNextin').hide();
+    	$('.testNextreg').show();
+	}else{
+		//第一次登录
+    	$('#wrap').hide();
+    	$('#suspend').show();
+    	$('.testNextin').show();
+    	$('.testNextreg').hide();
+	}
+    $('.beginTest').click(function(){
+    	$('#wrap').show();
+    	$('#suspend').hide();
+    	localStorage.setItem('is_begin',true);
+    })
+    $('.testNextin').click(function(){
+        var index_url = localStorage.getItem('index');
+        location.href = index_url;
+        localStorage.removeItem('index');
+    })
+    $('.testNext').on('click',function(){
+    	var tab_li = $('.envir-monitor-tab li');
+    	var cont_li = $('.envir-monitor-cont li');
+	    tab_li.removeClass('active');
+	    cont_li.removeClass('active');  
+    	var n = $(this).attr('index');
+	    switch(n){
+	    	case '1':
+	    		tab_li.eq(n).addClass('active');
+//	    		tab_li.eq(0).find('img').addClass('on');
+	    		cont_li.eq(n).addClass('active');
+	    		break;
+	    	case '2':
+	    		tab_li.eq(n).addClass('active');
+//	    		tab_li.eq(1).find('img').addClass('on');
+	    		cont_li.eq(n).addClass('active');
+	    		break;
+	    	case '3':
+	    		tab_li.eq(n).addClass('active');
+//	    		tab_li.eq(2).find('img').addClass('on');
+	    		cont_li.eq(n).addClass('active');
+	    		//声音禁止
+        		if(window.is_soundBegin==true){
+        			mediaTest.stopSound();
+        			$('#soundTest').removeClass('hide');
+        			$('#soundTestStop').addClass('hide');
+	    		}
+	    		break;
+	    	case '4':
+//	    		重新检测
+	    		tab_li.eq(0).addClass('active');
+	    		cont_li.eq(0).addClass('active');
+	    		if(window.is_soundBegin==true){
+        			mediaTest.stopSound();
+        			$('#soundTest').removeClass('hide');
+        			$('#soundTestStop').addClass('hide');
+	    		}
+	    		break;
+	    	case '5':
+	    		//进入课堂
+	    		tab_li.eq(3).addClass('active');
+	    		cont_li.eq(3).addClass('active');
+	    		break;
+	    }
+    })
+    mediaTest.init();
+</script>
+
+</body></html>
