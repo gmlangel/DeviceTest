@@ -16,6 +16,14 @@
     </div>
 </div>
 <script type="text/javascript">
+    var lessonState = {
+        "notStart":0,/*未开始*/
+        "processing":1,/*进行中*/
+        "isCompleted":2,/*已结束*/
+        "tea_not":3,/*老师缺席*/
+        "stu_not":4,/*学生缺席*/
+        "cancel":5/*已取消*/
+    }
     var lessonCon = document.getElementById("lessonList_subContainer");
     var currentLessonMode = "";//当前正在显示的课程类型
     lessonCon.style.height = (document.body.clientHeight - 180) + "px";
