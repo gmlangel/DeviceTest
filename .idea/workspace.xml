@@ -31,23 +31,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.803922">
-              <caret line="129" column="29" selection-start-line="129" selection-start-column="29" selection-end-line="129" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.3652174">
+              <caret line="14" column="38" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="38" />
               <folding>
-                <element signature="e#1340#2893#0" expanded="false" />
-                <element signature="e#2975#3117#0" expanded="false" />
+                <element signature="e#1295#2848#0" expanded="false" />
+                <element signature="e#2930#3072#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="diviceLayout.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="diviceLayout.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/deviceTestCss/diviceLayout.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5930435">
+            <state vertical-scroll-proportion="-6.6862745">
               <caret line="304" column="17" selection-start-line="304" selection-start-column="17" selection-end-line="304" selection-end-column="17" />
               <folding />
             </state>
@@ -117,10 +117,10 @@
         <option value="$PROJECT_DIR$/lessonList.html" />
         <option value="$PROJECT_DIR$/tt2.html" />
         <option value="$PROJECT_DIR$/css/index.css" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/myjs/deviceTest.js" />
         <option value="$PROJECT_DIR$/deviceTest.html" />
         <option value="$PROJECT_DIR$/css/deviceTestCss/diviceLayout.css" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -319,7 +319,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="723" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16796875" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -751,17 +751,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.803922">
-          <caret line="129" column="29" selection-start-line="129" selection-start-column="29" selection-end-line="129" selection-end-column="29" />
-          <folding>
-            <element signature="e#1340#2893#0" expanded="false" />
-            <element signature="e#2975#3117#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/deviceTest.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.448718">
@@ -789,9 +778,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/deviceTestCss/diviceLayout.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5930435">
+        <state vertical-scroll-proportion="-6.6862745">
           <caret line="304" column="17" selection-start-line="304" selection-start-column="17" selection-end-line="304" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3652174">
+          <caret line="14" column="38" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="38" />
+          <folding>
+            <element signature="e#1295#2848#0" expanded="false" />
+            <element signature="e#2930#3072#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
