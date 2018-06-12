@@ -15,11 +15,12 @@
                     <div class="divBtn">用二维码扫描登录</div>
                     <div class="divBtn">用手机短信验证码登录</div>
                 </div>
-                <div id="subLoginPanel_2code" class="subLoginPanel_contentClass" style="display: none">
-                    <img src="./assets/login/id2Code.png">
-                    <div>手机打开微信 扫描二维码登录</div>
+                <div id="subLoginPanel_2code" class="subLoginPanel_contentClass">
+                    <!--<img src="./assets/login/id2Code.png">-->
+                    <div id="subLoginPanel_2codeImg"></div>
+                    <div id="subLoginPanel_2codeDes">手机打开微信 扫描二维码登录</div>
                 </div>
-                <div id="subLoginPanel_mobilePhone" class="subLoginPanel_contentClass" style="display: block">
+                <div id="subLoginPanel_mobilePhone" class="subLoginPanel_contentClass" style="display: none;">
                     <form id="mobilePhoneLoginForm">
                         <div id="bg_mobile"><input type="text" placeholder="手机号" id="tb_mobile" maxlength="11" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"></div>
                         <div id="bg_regule"><input type="text" placeholder="验证码" id="tb_regule" maxlength="8" onkeyup="value=value.replace(/[\W]/g,'') " onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"></div>
@@ -36,6 +37,20 @@
         $("#btn_joinClassRoom").click(function(){
             window.location.href = "./index.html?pageTag=code2Mode";
         });
+        var red_uri = window.encodeURI("https://bmcode.com/api/webwechat");
+        var href_uri = window.encodeURI("https://www.bmcode.com/css/weixinCode.css");
+        /**
+         * 二维码图片生成,在HTTP或者本地看不到效果,必须把css和当前的html部署到https服务器上才有效果
+         * */
+//        var obj = new WxLogin({
+//            id:"subLoginPanel_2codeImg",
+//            appid: "wx140a1181b685998a",
+//            scope: "snsapi_login",
+//            redirect_uri: red_uri,
+//            state: "STATE#wechat_redirect",
+//            style: "",
+//            href: href_uri
+//        });
     </script>
 </body>
 </html>
