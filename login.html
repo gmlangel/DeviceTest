@@ -12,12 +12,12 @@
             <div id="subLoginPanel">
                 <div id="subLoginPanel_title">欢迎登录斑码编程在线教室</div>
                 <div id="subLoginPanel_tabTool">
-                    <div class="divBtn">用二维码扫描登录</div>
-                    <div class="divBtn">用手机短信验证码登录</div>
+                    <div id="btn_erweima" class="divBtn">用二维码扫描登录</div>
+                    <div id="btn_mobile" class="divBtn">用手机短信验证码登录</div>
                 </div>
                 <div id="subLoginPanel_2code" class="subLoginPanel_contentClass">
                     <!--<img src="https://open.weixin.qq.com/connect/qrcode/001p5eQ82dSIklCS">-->
-                    <div id="subLoginPanel_2codeImg">
+                    <div id="subLoginPanel_2codeImg" scrollTop="100" style="width: 285px;height: 285px;overflow: hidden;-webkit-transform: scale(0.6383,0.6383);">
                     </div>
                     <div id="subLoginPanel_2codeDes">手机打开微信 扫描二维码登录</div>
                 </div>
@@ -53,27 +53,31 @@
             href:href_uri
         });
 
-
-//
         console.log(4)
-        var frameContentTimerId = setTimeout(function(){
-            console.log(window.frames)
-//            if(document.frames && document.frames.count > 0){
-//                var tempIframe = document.frames[0];
-//                var arr = tempIframe.contentWindow.document.getElementsByName("normalPanel")
-//                console.log(arr)
-//            }
-        },500)
-//        $.ajax({
-//            url:"https://open.weixin.qq.com/connect/qrconnect?appid=wx140a1181b685998a&redirect_uri=http%3A%2F%2Fbmcode.com%2Fwebwechat&response_type=code&scope=snsapi_login&state=STATE#wechat_redirect",
-//            dataType:"html",
-//            timeout:30,
-//            success:function(data){
-//                if(data){
-//                    console.log(data);
-//                }
-//            }
-//        });
+        document.getElementById('subLoginPanel_2codeImg').scrollTop=54;
+        document.getElementById('subLoginPanel_2codeImg').scrollLeft=6;
+
+        $("#btn_erweima").click(function(){
+            changePanelByTabTool("btn_erweima")
+        })
+        $("#btn_mobile").click(function(){
+            changePanelByTabTool("btn_mobile");
+        })
+
+        function changePanelByTabTool(panelName){
+            if(panelName == "btn_erweima"){
+                $("#subLoginPanel_2code").show();
+                document.getElementById("btn_erweima").style.backgroundColor = "#ffffff"
+                $("#subLoginPanel_mobilePhone").hide();
+                document.getElementById("btn_mobile").style.backgroundColor = "#f2f2f2"
+            }else{
+                $("#subLoginPanel_2code").hide();
+                document.getElementById("btn_erweima").style.backgroundColor = "#f2f2f2"
+                $("#subLoginPanel_mobilePhone").show();
+                document.getElementById("btn_mobile").style.backgroundColor = "#ffffff"
+            }
+        }
+        changePanelByTabTool("btn_erweima");
     </script>
 </body>
 </html>
