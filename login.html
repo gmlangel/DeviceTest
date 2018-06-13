@@ -16,8 +16,9 @@
                     <div class="divBtn">用手机短信验证码登录</div>
                 </div>
                 <div id="subLoginPanel_2code" class="subLoginPanel_contentClass">
-                    <!--<img src="./assets/login/id2Code.png">-->
-                    <div id="subLoginPanel_2codeImg"></div>
+                    <!--<img src="https://open.weixin.qq.com/connect/qrcode/001p5eQ82dSIklCS">-->
+                    <div id="subLoginPanel_2codeImg">
+                    </div>
                     <div id="subLoginPanel_2codeDes">手机打开微信 扫描二维码登录</div>
                 </div>
                 <div id="subLoginPanel_mobilePhone" class="subLoginPanel_contentClass" style="display: none;">
@@ -49,8 +50,30 @@
             redirect_uri: red_uri,
             state: "STATE#wechat_redirect",
             style: "",
-            href: href_uri
+            href:href_uri
         });
+
+
+//
+        console.log(4)
+        var frameContentTimerId = setTimeout(function(){
+            console.log(window.frames)
+//            if(document.frames && document.frames.count > 0){
+//                var tempIframe = document.frames[0];
+//                var arr = tempIframe.contentWindow.document.getElementsByName("normalPanel")
+//                console.log(arr)
+//            }
+        },500)
+//        $.ajax({
+//            url:"https://open.weixin.qq.com/connect/qrconnect?appid=wx140a1181b685998a&redirect_uri=http%3A%2F%2Fbmcode.com%2Fwebwechat&response_type=code&scope=snsapi_login&state=STATE#wechat_redirect",
+//            dataType:"html",
+//            timeout:30,
+//            success:function(data){
+//                if(data){
+//                    console.log(data);
+//                }
+//            }
+//        });
     </script>
 </body>
 </html>
